@@ -39,7 +39,8 @@ public class ObjectPooler : MonoBehaviour
 
             for (int i = 0; i < pool.size; i++)
             {
-                CreateNewObject(pool);
+                GameObject newObj = CreateNewObject(pool, pool.prefabsToBeSpawned[Random.Range(0, pool.prefabsToBeSpawned.Length)]);
+                AddObjectToPool(pool, newObj);
             }
         }
     }
@@ -54,18 +55,38 @@ public class ObjectPooler : MonoBehaviour
             return null;
         }
 
-        GameObject poolableObject = _poolDictionary[objectType].Dequeue();
-        poolableObject.GetComponent<PoolableObject>().PutToUse();
-        return poolableObject;
+        if (_poolDictionary[objectType].Count > 0)
+        {
+            return _poolDictionary[objectType].Dequeue();
+        }
+        else
+        {
+            return CreateNewObject(pool, pool.prefabsToBeSpawned[Random.Range(0, pool.prefabsToBeSpawned.Length)]);
+        }
     }
 
-    private void CreateNewObject(Pool pool)
+    private GameObject CreateNewObject(Pool pool, GameObject objPrefab)
     {
-        int randomNumber = Random.Range(0, pool.prefabsToBeSpawned.Length);
-        GameObject obj = Instantiate(pool.prefabsToBeSpawned[randomNumber]);
-        obj.GetComponent<PoolableObject>().SetObjectType(pool.objectType);
+        GameObject obj = Instantiate(objPrefab);
         obj.SetActive(false);
 
+        if (obj.TryGetComponent(out PoolableObject poolableObject))
+        { 
+            poolableObject.SetObjectType(pool.objectType);
+            poolableObject.SetReadyToUse();
+        }
+        else
+        {
+            PoolableObject poolableObj = obj.AddComponent<PoolableObject>();
+            poolableObj.SetObjectType(pool.objectType);
+            poolableObj.SetReadyToUse();
+        }
+
+        return obj;
+    }
+
+    private void AddObjectToPool(Pool pool, GameObject obj)
+    {
         if (_poolDictionary.ContainsKey(pool.objectType))
         {
             _poolDictionary[pool.objectType].Enqueue(obj);

@@ -6,7 +6,7 @@ using UnityEngine;
 public class PoolableObject : MonoBehaviour
 {
     private PoolableObjectTypes _objectType;
-    private bool _isBeingUsed;
+    private bool _isReadyToBeUsed = false;
 
     private void OnDisable()
     {
@@ -15,13 +15,12 @@ public class PoolableObject : MonoBehaviour
 
     private void ReturnToPool()
     {
-        if (!_isBeingUsed)
+        if (!_isReadyToBeUsed)
         {
             return;
         }
         
         ObjectPooler.Instance.ReturnObjectToPool(gameObject);
-        _isBeingUsed = false;
     }
 
     public void SetObjectType(PoolableObjectTypes objectType)
@@ -34,8 +33,8 @@ public class PoolableObject : MonoBehaviour
         return _objectType;
     }
 
-    public void PutToUse()
+    public void SetReadyToUse()
     {
-        _isBeingUsed = true;
+        _isReadyToBeUsed = true;
     }
 }

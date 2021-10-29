@@ -12789,7 +12789,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1200812342}
-  m_LocalRotation: {x: 0.22047482, y: 0.000000008391491, z: -0.0000000018967874, w: 0.9753927}
+  m_LocalRotation: {x: 0.22047482, y: -0.0000000083914875, z: 0.0000000018967863, w: 0.9753927}
   m_LocalPosition: {x: 0.7988918, y: 2.894002, z: -45.164104}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -15939,8 +15939,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30, y: -30}
-  m_SizeDelta: {x: 25, y: 25}
+  m_AnchoredPosition: {x: 120, y: -120}
+  m_SizeDelta: {x: 126, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1502650161
 MonoBehaviour:
@@ -16015,8 +16015,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.788406, y: 0}
-  m_SizeDelta: {x: 80.4232, y: 25}
+  m_AnchoredPosition: {x: 389.661, y: 0}
+  m_SizeDelta: {x: 647.545, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1575154776
 MonoBehaviour:
@@ -16065,8 +16065,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -16101,7 +16101,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 20, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -17173,7 +17173,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704868326}
-  m_LocalRotation: {x: 0.22047482, y: 0.000000008391491, z: -0.0000000018967874, w: 0.9753927}
+  m_LocalRotation: {x: 0.22047482, y: -0.0000000083914875, z: 0.0000000018967863, w: 0.9753927}
   m_LocalPosition: {x: 0.7988918, y: 2.894002, z: -45.164104}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -18459,11 +18459,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1440, y: 2560}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -31836,10 +31836,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin
       objectReference: {fileID: 0}
-    - target: {fileID: 7860905079113955514, guid: 180c50843760a364497d54f805666c7e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 180c50843760a364497d54f805666c7e, type: 3}
 --- !u!4 &5033037768615576066
@@ -36331,6 +36327,10 @@ PrefabInstance:
     - target: {fileID: 2807540165385126812, guid: 3524db20a4d5c3e4cb84191f367dfae6, type: 3}
       propertyPath: m_Name
       value: SpecialCoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 2807540165385126815, guid: 3524db20a4d5c3e4cb84191f367dfae6, type: 3}
+      propertyPath: _rotationSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3295986538853980454, guid: 3524db20a4d5c3e4cb84191f367dfae6, type: 3}
       propertyPath: m_RootOrder

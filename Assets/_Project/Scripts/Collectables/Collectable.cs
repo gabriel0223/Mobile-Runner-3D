@@ -23,17 +23,12 @@ public class Collectable : MonoBehaviour, ICollectable
     void Start()
     {
         PlaySineAnimation();
+        PlayRotationAnimation();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void PlayRotationAnimation()
     {
-        RotateHorizontally();
-    }
-
-    private void RotateHorizontally()
-    {
-        transform.Rotate(Vector3.up * _rotationSpeed * Time.deltaTime);
+        transform.DOLocalRotate(Vector3.up * -180, 1 / _rotationSpeed).SetLoops(-1, LoopType.Incremental).SetEase(Ease.Linear);
     }
     
     private void PlaySineAnimation()
