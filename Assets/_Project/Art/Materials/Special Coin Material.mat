@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Special Coin Material
+  m_Shader: {fileID: -6465566751694194690, guid: 4d73baa179613324d949fb78e0a71632, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_4d41a06bcfa64f568556385ab9069156:
+        m_Texture: {fileID: 2800000, guid: 75bcd0b7eff514a1b963792ac5ce380c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_0a9ac2a8e5274d94ac543858e930ce5c: 0.2
+    - Vector1_666c9f609358448ebd010f45e21a6048: 6
+    m_Colors:
+    - Color_47955be775bd49d583cf456e60e720d8: {r: 0.31810758, g: 0.23696157, b: 0.7075472, a: 0}
+    - Color_8c9a1d23bec14052942a583e0adde476: {r: 0.5925423, g: 0.121885024, b: 0.7830189, a: 0}
+  m_BuildTextureStacks: []
