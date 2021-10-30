@@ -8,9 +8,6 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody _rb;
-    private SwipeDetection _swipeDetection;
-    private PlayerAnimation _playerAnim;
     [SerializeField] private Lanes _lanes;
     [SerializeField] private LayerMask groundLayer;
 
@@ -25,8 +22,13 @@ public class PlayerController : MonoBehaviour
     [Tooltip("How much will the player max speed increase over time?")]
     [SerializeField] private float _maxSpeedIncrease;
 
+    private Rigidbody _rb;
+    private SwipeDetection _swipeDetection;
+    private PlayerAnimation _playerAnim;
+    
     private int _currentLaneIndex = 1;
     private bool _switchingLane;
+    private float _initialZPos;
     private bool dead;
     public bool Dead => dead;
     
@@ -37,6 +39,8 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _swipeDetection = InputManager.Instance.gameObject.GetComponent<SwipeDetection>();
         _playerAnim = GetComponentInChildren<PlayerAnimation>();
+        
+        _initialZPos = transform.position.z;
     }
 
     private void OnEnable()
@@ -110,5 +114,10 @@ public class PlayerController : MonoBehaviour
         OnDie?.Invoke();
         dead = true;
         _rb.isKinematic = true;
+    }
+
+    public int GetDistanceTraveled()
+    {
+        return (int)(transform.position.z - _initialZPos);
     }
 }

@@ -2,33 +2,36 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
+public class GameOverWindow : MonoBehaviour
 {
-    [SerializeField] private Button _playButton;
+    [SerializeField] private Button _retryButton;
     [SerializeField] private Button _quitButton;
-    
-    // Start is called before the first frame update
-    private void Start()
+
+    private void OnEnable()
     {
         SubscribeToButtons();
     }
 
+    private void OnDisable()
+    {
+        UnsubscribeToButtons();
+    }
+
     private void SubscribeToButtons()
     {
-        _playButton.onClick.AddListener(Play);
+        _retryButton.onClick.AddListener(Retry);
         _quitButton.onClick.AddListener(Quit);
     }
 
-    private void OnDestroy()
+    private void UnsubscribeToButtons()
     {
-        _playButton.onClick.RemoveListener(Play);
+        _retryButton.onClick.RemoveListener(Retry);
         _quitButton.onClick.RemoveListener(Quit);
     }
 
-    private void Play()
+    private void Retry()
     {
         LevelManager.Instance.LoadGame();
     }

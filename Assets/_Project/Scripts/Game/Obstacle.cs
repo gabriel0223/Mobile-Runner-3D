@@ -7,7 +7,10 @@ public class Obstacle : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other)
     {
-        if (!other.gameObject.GetComponent<PlayerController>()) return;
+        if (!other.gameObject.GetComponent<PlayerController>())
+        {
+            return;
+        }
 
         other.gameObject.GetComponent<PlayerController>().Die();
     }

@@ -11,6 +11,22 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5fc9733172398c140b05b461501bb9b6, type: 2}
+    - target: {fileID: 5407648587081189940, guid: 180c50843760a364497d54f805666c7e, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.8666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407648587081189940, guid: 180c50843760a364497d54f805666c7e, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.2588235
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407648587081189940, guid: 180c50843760a364497d54f805666c7e, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.6180134
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407648587081189946, guid: 180c50843760a364497d54f805666c7e, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7375870525120635392, guid: 180c50843760a364497d54f805666c7e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -61,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7860905079113955513, guid: 180c50843760a364497d54f805666c7e, type: 3}
       propertyPath: _rotationSpeed
-      value: -90
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7860905079113955513, guid: 180c50843760a364497d54f805666c7e, type: 3}
       propertyPath: _sineMovementDuration

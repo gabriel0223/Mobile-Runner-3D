@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class LevelManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    public static LevelManager Instance { get; private set; }
     
     [SerializeField] private GameObject _loadingScreen;
     [SerializeField] private Slider _progressBar;
@@ -19,6 +19,16 @@ public class GameManager : MonoBehaviour
         Instance = this;
 
         SceneManager.LoadSceneAsync((int)SceneIndexes.MAIN_MENU, LoadSceneMode.Additive);
+    }
+
+    public void ReloadScene()
+    {
+        // int currentScene = SceneManager.GetActiveScene().buildIndex;
+        // SceneManager.LoadSceneAsync(currentScene);
+        // SceneManager.UnloadSceneAsync(currentScene);
+
+        SceneManager.UnloadSceneAsync((int)SceneIndexes.GAME);
+        SceneManager.LoadSceneAsync((int)SceneIndexes.GAME, LoadSceneMode.Additive);
     }
 
     public void LoadGame()
